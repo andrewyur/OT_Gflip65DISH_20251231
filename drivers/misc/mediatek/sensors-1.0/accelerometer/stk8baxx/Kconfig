@@ -1,0 +1,9 @@
+config MTK_STK8BAXX_I2C
+	bool "MTK_STK8BAXX for MediaTek package"
+	default n
+	help
+	  The stk8baxx is a highly integrated,
+	  low power internal measurement unit
+	  that provides precise acceleration
+	  measurement.
+	  this config will turn on accelerometer feature.

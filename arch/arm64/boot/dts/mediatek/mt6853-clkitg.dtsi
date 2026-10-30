@@ -1,0 +1,12 @@
+
+&clkitg {
+	status = "okay";
+	bring-up {
+		compatible = "mediatek,clk-bring-up";
+		clocks =
+			/* MTCMOS */
+
+			/* CLOCK */
+			<&clk26m>;
+	};
+};

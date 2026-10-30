@@ -1,0 +1,129 @@
+
+&bat_gm30 {
+	compatible = "mediatek,bat_gm30";
+	io-channels = <&auxadc 2>;
+	io-channel-names = "batteryID-channel";
+	battery-id-pullup-ohm = <(39000)>;
+	/*	Charging termination current.*/
+	DIFFERENCE_FULLOCV_ITH = <(300)>;
+	/*	If ui_soc shows 1% more than X minites, system will shutdown.*/
+	SHUTDOWN_1_TIME = <(5)>;
+/*	The ui_soc will keep 100% until SOC drop X percents after unplugged.*/
+	KEEP_100_PERCENT = <(1)>;
+	R_FG_VALUE = <(10)>;	/*	R_sense resistance.*/
+	/*	Configures whether using embedded battery or not.*/
+	EMBEDDED_SEL = <(0)>;
+	PMIC_SHUTDOWN_CURRENT = <(20)>;	/*	System shutdown current.*/
+	FG_METER_RESISTANCE = <(75)>;	/*	The resistance of PCB*/
+	/*	Tune value for current measurement.*/
+	CAR_TUNE_VALUE = <(100)>;
+	PMIC_MIN_VOL = <(33500)>;
+	/*	vboot voltage for gauge 0%.*/
+	POWERON_SYSTEM_IBOOT = <(500)>;
+	/*	power on system iboot*/
+	SHUTDOWN_GAUGE0_VOLTAGE = <(34000)>;
+	/*	shutdown gauge 0% voltage*/
+	TEMPERATURE_T0 = <(50)>;	/*	Battery temperature T0*/
+	TEMPERATURE_T1 = <(25)>;	/*	Battery temperature T1*/
+	TEMPERATURE_T2 = <(10)>;	/*	Battery temperature T2*/
+	TEMPERATURE_T3 = <(0)>;	/*	Battery temperature T3*/
+	TEMPERATURE_T4 = <(-10)>;	/*	Battery temperature T4*/
+	g_FG_PSEUDO100_T0 = <(100)>;	/*	Pseudo 100% percentage at T0.*/
+	g_FG_PSEUDO100_T1 = <(100)>;	/*	Pseudo 100% percentage at T1.*/
+	g_FG_PSEUDO100_T2 = <(100)>;	/*	Pseudo 100% percentage at T2.*/
+	g_FG_PSEUDO100_T3 = <(100)>;	/*	Pseudo 100% percentage at T3.*/
+	g_FG_PSEUDO100_T4 = <(100)>;	/*	Pseudo 100% percentage at T4.*/
+	/*	System shut down voltage.*/
+	Q_MAX_SYS_VOLTAGE_BAT0 = <(3350)>;
+	/*	System shut down voltage.*/
+	Q_MAX_SYS_VOLTAGE_BAT1 = <(3350)>;
+	/*	System shut down voltage.*/
+	Q_MAX_SYS_VOLTAGE_BAT2 = <(3350)>;
+	/*	System shut down voltage.*/
+	Q_MAX_SYS_VOLTAGE_BAT3 = <(3350)>;
+	g_temperature =
+		<
+		50/*TEMPERATURE_T0*/
+		25/*TEMPERATURE_T1*/
+		10/*TEMPERATURE_T2*/
+		0/*TEMPERATURE_T3*/
+		(-10)/*TEMPERATURE_T4*/
+		>;
+	g_Q_MAX =
+		<
+		//BAT1  BAT2  BAT3  BAT4
+		1749 1770 1783 1906/*T0*/
+		1778 1794 1778 1911/*T1*/
+		1759 1778 1801 1922/*T2*/
+		1800 1781 1820 1961/*T3*/
+		1769 1801 1819 1934/*T4*/
+		>;
+	g_Q_MAX_H_CURRENT =
+		<
+		//BAT1 BAT2 BAT3 BAT4
+		1735 1755 1772 1894/*T0*/
+		1756 1773 1775 1895/*T1*/
+		1706 1737 1743 1847/*T2*/
+		1543 1563 1497 1713/*T3*/
+		859 930 911 1119/*T4*/
+		>;
+	g_FG_PSEUDO1 =
+		<
+		//BAT1 BAT2 BAT3 BAT4
+		2    2    2    2/*T0*/
+		2    2    2    2/*T1*/
+		2    2    2    2/*T2*/
+		2    2    2    2/*T3*/
+		2    2    2    2/*T4*/
+		>;
+	g_FG_PSEUDO100 =
+		<
+		//BAT1 BAT2 BAT3 BAT4
+		97   97   97   97/*T0*/
+		97   97   97   97/*T1*/
+		97   97   97   97/*T2*/
+		92   92   92   92/*T3*/
+		90   90   90   90/*T4*/
+		>;
+	g_PMIC_MIN_VOL =
+		<
+		//BAT1  BAT2  BAT3  BAT4
+		33500 33500 33500 33500/*T0*/
+		33500 33500 33500 33500/*T1*/
+		33500 33500 33500 33500/*T2*/
+		33500 33500 33500 33500/*T3*/
+		33500 33500 33500 33500/*T4*/
+		>;
+	g_PON_SYS_IBOOT =
+		<
+		//BAT1 BAT2 BAT3 BAT4
+		5000 5000 5000 5000/*T0*/
+		5000 5000 5000 5000/*T1*/
+		5000 5000 5000 5000/*T2*/
+		5000 5000 5000 5000/*T3*/
+		5000 5000 5000 5000/*T4*/
+		>;
+	g_QMAX_SYS_VOL =
+		<
+		//BAT1  BAT2  BAT3  BAT4
+		33500 33500 33500 33500/*T0*/
+		33500 33500 33500 33500/*T1*/
+		33500 33500 33500 33500/*T2*/
+		33500 33500 33500 33500/*T3*/
+		33500 33500 33500 33500/*T4*/
+		>;
+	g_SHUTDOWN_HL_ZCV =
+		<
+		//BAT1 BAT2 BAT3 BAT4
+		3400 3400 3400 3400/*T0*/
+		3400 3400 3400 3400/*T1*/
+		3400 3400 3400 3400/*T2*/
+		3400 3400 3400 3400/*T3*/
+		3400 3400 3400 3400/*T4*/
+		>;
+
+#include "gflip6_battery_BYD_TLi017D1_table_ext.dtsi"
+#include "gflip6_battery_BYD_TLi017C1_table_ext.dtsi"
+#include "gflip6_battery_TMB_TLi017CA_table_ext.dtsi"
+#include "gflip6_battery_VK_TLi017C7_table_ext.dtsi"
+};

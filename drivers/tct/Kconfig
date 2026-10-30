@@ -1,0 +1,58 @@
+config TCT_DEVICEINFO
+	bool "TCT_DEVICEINFO"
+	default n
+	help
+	  Say Y here to enable TCT_DEVICEINFO.
+
+# Begin add 2021/04/23 by zhuanmen.hu to control log output
+config TCT_FEATUR_LOGCAT_CTL
+	bool "tct log output control"
+	default n
+# End add 2021/04/23 by zhuanmen.hu to control log output
+
+#Begin add by bing-zhang for 11492194 on 20210913
+config CRUZELITETF_HBM_FEATURE
+	bool "CRUZELITETF_HBM_FEATURE"
+	default n
+	help
+	  Say Y here to enable TCT_BSP_FEATURE.
+#End add by bing-zhang for 11492194 on 20210913
+
+# Begin add by jingqing.yan for task 11459722 on 2021-08-31
+config TCT_BSP_FEATURE
+	bool "TCT_BSP_FEATURE"
+	default y
+	help
+	  Say Y here to enable TCT_BSP_FEATURE.
+#End add by jingqing.yan for task 11459722 on 2021-08-31
+
+config TCT_UI_TURBO
+	bool "ui turbo v1.0"
+	default n
+
+config TCT_STAT
+	bool "tct statistics feature"
+	depends on TCT_UI_TURBO
+	default y
+
+config TCT_PERF
+	bool "tct performace control device"
+	depends on TCT_UI_TURBO
+	default y
+
+config TCT_MMPRESSURE_DETECT
+        bool "detect mm pressure and report to user space"
+        default n
+
+config TCT_DMCC
+        tristate "RAM Compress and Clean"
+        depends on SYSFS && SWAP
+        default n
+        help
+          Creates background thread for compress and clean used RAM
+          dynamiclly,enabled by write 1 to /sys/kernel/dmcc/enable.
+
+config INTELLIGENT_RECLAIM
+        bool "enable intelligent reclaim"
+        depends on PROC_FS
+        default n

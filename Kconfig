@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.txt.
+#
+mainmenu "Linux/$ARCH $KERNELVERSION Kernel Configuration"
+
+config SRCARCH
+	string
+	option env="SRCARCH"
+
+# Begin added by bitao.xiong for GF6TF-7076 on 2021-10-29
+config TARGET_BUILD_MMITEST
+	string
+	option env="TARGET_BUILD_MMITEST"
+
+config TCT_TARGET_GCF
+	string
+	option env="TCT_TARGET_GCF"
+
+config TARGET_BUILD_CERTIFICATION
+        string
+        option env="TARGET_BUILD_CERTIFICATION"
+
+config DISABLE_TEMPERATURE_DETECTION_AND_THERMAL_POLICY
+        string
+        option env="DISABLE_TEMPERATURE_DETECTION_AND_THERMAL_POLICY"
+# End added by bitao.xiong for GF6TF-7076 on 2021-10-29
+
+#Add-start by baiwei.peng for GF6TMO-7028 on 2022/01/04
+config TARGET_BUILD_ENDURANCE
+        string
+        option env="TARGET_BUILD_ENDURANCE"
+#Add-end by baiwei.peng for GF6TMO-7028 on 2022/01/04
+
+source "arch/$SRCARCH/Kconfig"

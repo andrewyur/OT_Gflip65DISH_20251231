@@ -1,0 +1,11 @@
+config TCT_GFLIP6_VZW
+        bool "TCT GFLIP6 VZW"
+        default n
+        help
+          Support for TCT GFLip6 VZW device.
+
+config TCT_GFLIP6_GC
+        bool "TCT GFLIP6 GC"
+        default n
+        help
+          Support for TCT GFLip6 GC device.

@@ -1,0 +1,4 @@
+/* SPDX-License-Identifier: GPL-2.0 */
+
+MDDP_MODULE_ID(MDDP_APP_TYPE_WH)
+MDDP_MODULE_PREFIX(mddpwh)

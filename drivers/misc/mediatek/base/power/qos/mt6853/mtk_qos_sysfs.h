@@ -1,0 +1,8 @@
+
+#ifndef __MTK_QOS_SYSFS_H__
+#define __MTK_QOS_SYSFS_H__
+
+extern int qos_add_interface(struct device *dev);
+extern void qos_remove_interface(struct device *dev);
+
+#endif
